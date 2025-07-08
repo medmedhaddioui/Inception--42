@@ -1,8 +1,13 @@
 FROM debian:latest
 
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y php-fpm
+    apt-get install -y php-fpm \
+                       php-mysqli \
+                       curl 
 
 COPY www.conf /etc/php/8.2/fpm/pool.d/www.conf
+COPY script.sh .
 
-CMD ["php-fpm8.2", "-F"]
+RUN chmod +x script.sh
+
+CMD ["./script.sh"]
