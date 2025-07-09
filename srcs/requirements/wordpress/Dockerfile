@@ -5,7 +5,7 @@ RUN apt-get update && apt-get upgrade -y && \
                        php-mysqli \
                        curl 
 
-COPY www.conf /etc/php/8.2/fpm/pool.d/www.conf
+COPY conf/www.conf /etc/php/8.2/fpm/pool.d/www.conf
 COPY script.sh .
 
 RUN chmod +x script.sh
