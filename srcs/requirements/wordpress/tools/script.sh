@@ -1,4 +1,5 @@
 #!/bin/bash
+
 mkdir -p /var/www/html
 cd /var/www/html
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
@@ -13,6 +14,7 @@ sed -i "s/define( 'DB_USER', 'username_here' );/define( 'DB_USER', '${MYSQL_USER
 sed -i "s/define( 'DB_PASSWORD', 'password_here' );/define( 'DB_PASSWORD', '${MYSQL_PASSWORD}' );/" wp-config.php
 sed -i "s/localhost/mariadb/" wp-config.php
 
+sleep 10
 
 wp core install \
   --url="mel-hadd.42.fr" \

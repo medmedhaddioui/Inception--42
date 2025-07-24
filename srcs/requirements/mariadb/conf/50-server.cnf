@@ -3,9 +3,7 @@
 # Use it for options that only the server (but not clients) should see
 
 # this is read by the standalone daemon and embedded servers
-[server]
-
-init_file = /etc/mysql/init.sql
+#[server]
 
 # this is only for the mysqld standalone daemon
 [mysqld]
