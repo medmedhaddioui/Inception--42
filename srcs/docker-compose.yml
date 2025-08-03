@@ -14,7 +14,7 @@ services:
       inception:
   wordpress:
     build: requirements/wordpress/.
-    container_name: wp-php
+    container_name: wordpress
     volumes:
       - web:/var/www/html
     depends_on:
