@@ -24,6 +24,7 @@ cp wp-config-sample.php wp-config.php
 
 # sed command is used to perform text replacement in the wp-config.php file.
 # -i option is used to edit the file in place, meaning it modifies the file directly.
+# s/old_text/new_text/ is the syntax for substitution, where old_text is replaced with new_text.
 sed -i "s/define( 'DB_NAME', 'database_name_here' );/define( 'DB_NAME', '${MYSQL_DATABASE}' );/" wp-config.php
 sed -i "s/define( 'DB_USER', 'username_here' );/define( 'DB_USER', '${MYSQL_USER}' );/" wp-config.php
 sed -i "s/define( 'DB_PASSWORD', 'password_here' );/define( 'DB_PASSWORD', '${MYSQL_PASSWORD}' );/" wp-config.php
