@@ -5,4 +5,4 @@ up:
 down:
 	@docker compose -f $(DIR) down
 fclean:
-	@docker system prune -a --volumes -f
+	@docker system prune -af

@@ -1,4 +1,3 @@
-version:  '3.8'
 services:
   nginx:
     build: requirements/nginx/.
@@ -12,6 +11,7 @@ services:
       - mariadb
     networks:
       inception:
+    restart: always
   wordpress:
     build: requirements/wordpress/.
     container_name: wordpress
@@ -23,6 +23,9 @@ services:
       inception:
     env_file:
       - .env
+    expose:
+      - "9000"
+    restart: always
   mariadb:
     build: requirements/mariadb/.
     container_name: mariadb
@@ -32,10 +35,20 @@ services:
       - db:/var/lib/mysql
     env_file:
       - .env
-
+    expose:
+      - "3306"
+    restart: always
 volumes:
     web:
+      driver_opts:
+        type: none
+        device: /home/med/data/web
+        o: bind
     db:
+      driver_opts:
+        type: none
+        device: /home/med/data/db
+        o: bind
 networks:
   inception:
     driver: bridge
