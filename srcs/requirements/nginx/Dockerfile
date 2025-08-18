@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM debian:bookworm
 
 RUN apt update && apt upgrade -y && \
         apt install -y nginx vim openssl
