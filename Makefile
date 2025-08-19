@@ -5,4 +5,5 @@ up:
 down:
 	@docker compose -f $(DIR) down
 fclean:
+	@docker compose -f $(DIR) down -v
 	@docker system prune -af

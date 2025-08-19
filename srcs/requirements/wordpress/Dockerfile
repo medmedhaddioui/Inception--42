@@ -13,8 +13,7 @@ RUN apt-get update && \
 COPY conf/www.conf /etc/php/8.2/fpm/pool.d/www.conf
 
 COPY tools/script.sh /script.sh
-RUN chmod +x /script.sh
 
-RUN mkdir -p /run/php
+RUN chmod +x /script.sh
 
 CMD ["bash", "/script.sh"]
